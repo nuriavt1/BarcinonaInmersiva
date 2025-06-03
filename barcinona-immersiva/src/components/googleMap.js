@@ -45,7 +45,7 @@ export default function GoogleMap() {
       }
     };
 
-    const url = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDjd6_cWoVzsLayPAa9rZpOjd6jB9l2H1w&libraries=places`;
+    const url = ``;
     loadScript(url).then(() => {
       initMap();
     });
