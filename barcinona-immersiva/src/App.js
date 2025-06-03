@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pagines/home'
+import Mapa from './pagines/app/mapa'
+import OnBoarding from './pagines/onBoarding'
+import Video from './pagines/app/video'
+import Biblioteca from './pagines/app/biblioteca'
+import Juga from './pagines/app/juga'
+import Nivells from './pagines/app/nivells'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*Diferents rutes per navegar per l'aplicació*/}
+      
+      <Router>
+        <Routes>
+          {/*Pàgina de Benvinguda*/}
+          <Route path="/" element={<Home />} ></Route>
+          <Route path="onBoarding" element={<OnBoarding />} ></Route>
+          <Route path="mapa" element={<Mapa />} ></Route>
+          <Route path="video" element={<Video />} ></Route>
+          <Route path="biblioteca" element={<Biblioteca />} ></Route>
+          <Route path="juga" element={<Juga />} ></Route>
+          <Route path="nivells" element={<Nivells />} ></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
