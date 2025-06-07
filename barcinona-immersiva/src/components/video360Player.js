@@ -1,44 +1,24 @@
- import React, { useEffect, useRef } from 'react';
- {/*import videojs from 'video.js';
-import 'video.js/dist/video-js.css';
-import 'videojs-vr/dist/videojs-vr.css';
-import 'videojs-vr'; */}
+import React, { useState, useRef } from 'react';
+import 'aframe';
+import placeHolder from "../assets/videos/placeholder.mp4"
+import { Entity, Scene } from 'aframe-react';
+
 
 export default function Video360Player({ src }) {
-  {/*  const videoRef = useRef(null);
-    const playerRef = useRef(null);
-
-    useEffect(() => {
-        if (!playerRef.current) {
-            playerRef.current = videojs(videoRef.current, {
-                controls: true,
-                autoplay: false,
-                preload: 'auto',
-                loop: false,
-                muted: false,
-                fluid: true,
-                plugins: {
-                    vr: {
-                        projection: 'AUTO',
-                        debug: false,
-                    },
-                },
-            });
-        }
-
-        playerRef.current.src({ type: 'video/mp4', src });
-        return () => {
-            if (playerRef.current) {
-                playerRef.current.dispose();
-                playerRef.current = null;
-            }
-        };
-    }, [src]);
-*/}
     return (
-        <div>
-            {/**
-            <video ref={videoRef} playsInline></video>*/}
-        </div>
+        <Scene>
+            <Entity primitive="a-videosphere" src="#video360" />
+            <video
+                id="video360"
+                // src={provabonaVideo} 
+                src={placeHolder}
+                rotation="0 90 0"
+                autoPlay
+         //     play-on-click
+                loop
+                playsInline
+                muted
+                crossOrigin="anonymous" />
+        </Scene>
     );
 }
