@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import 'aframe';
-import placeHolder from "../assets/videos/placeholder.mp4"
+import placeHolder from "../assets/videos/Provabona.mp4"
 import { Entity, Scene } from 'aframe-react';
 
 
@@ -17,7 +17,7 @@ export default function Video360Player({ src }) {
          //     play-on-click
                 loop
                 playsInline
-                muted
+                //muted
                 crossOrigin="anonymous" />
         </Scene>
     );
